@@ -211,6 +211,167 @@ export const learningCategories = [
         ]
       }
     ]
+  },
+  {
+    id: 6,
+    title: "Ocean Data Programming",
+    icon: "💻",
+    description: "Learn to code with oceanographic data and APIs",
+    color: "from-purple-500 to-indigo-600",
+    units: [
+      {
+        id: 11,
+        title: "Python for Ocean Science",
+        subtopics: [
+          {
+            id: 13,
+            title: "ARGO Float Data Access",
+            content: {
+              simple: "Learn how to download and work with ARGO float data using Python. We'll use libraries like pandas to analyze temperature and salinity measurements from real ocean floats.",
+              technical: "Use the argopy library to access ARGO data through OPeNDAP protocols. Implement data filtering, quality control flags, and time-series analysis using pandas, numpy, and matplotlib for oceanographic research.",
+              examples: `
+# Example: Accessing ARGO float data
+import argopy
+from argopy import DataFetcher as ArgoDataFetcher
+
+# Fetch data from specific region and time period
+argo_loader = ArgoDataFetcher()
+ds = argo_loader.region([-75, -45, 20, 30, 0, 10, '2020-01', '2020-06']).load()
+
+# Basic data analysis
+temperature = ds.sel(PRES=slice(0, 100))['TEMP']
+print(f"Mean surface temperature: {temperature.mean().values:.2f}°C")
+              `
+            }
+          },
+          {
+            id: 14,
+            title: "Satellite Data APIs",
+            content: {
+              simple: "Access satellite ocean data through web APIs. Learn to download sea surface temperature, ocean color, and altimetry data from NASA and NOAA databases.",
+              technical: "Integrate with NASA Earthdata, NOAA CoastWatch, and Copernicus Marine Service APIs. Handle authentication, data subsetting, and NetCDF/HDF5 formats using xarray and requests libraries.",
+              examples: `
+# Example: NASA PODAAC API for SST data
+import requests
+import xarray as xr
+
+# NASA Earthdata API endpoint
+url = "https://podaac-opendap.jpl.nasa.gov/opendap/allData/ghrsst/data/GDS2/L4/GLOB/JPL/MUR/v4.1/"
+dataset_url = f"{url}20240301090000-JPL-L4_GHRSST-SSTfnd-MUR-GLOB-v02.0-fv04.1.nc"
+
+# Load SST data
+ds = xr.open_dataset(dataset_url)
+sst = ds['analysed_sst'] - 273.15  # Convert to Celsius
+print(f"Global mean SST: {sst.mean().values:.2f}°C")
+              `
+            }
+          },
+          {
+            id: 15,
+            title: "Data Visualization Techniques",
+            content: {
+              simple: "Create professional ocean data visualizations using Python. Learn to make interactive maps, depth profiles, and time series plots that tell compelling stories with your data.",
+              technical: "Implement advanced plotting with matplotlib, plotly, and cartopy. Create interactive dashboards with bokeh, handle geographic projections, and optimize rendering for large oceanographic datasets.",
+              examples: `
+# Example: Interactive ocean temperature map
+import plotly.graph_objects as go
+import numpy as np
+
+# Create sample ocean temperature data
+lat = np.linspace(-90, 90, 180)
+lon = np.linspace(-180, 180, 360)
+temp = 20 + 10 * np.cos(np.radians(lat))[:, None] + np.random.normal(0, 1, (180, 360))
+
+fig = go.Figure(data=go.Heatmap(
+    z=temp,
+    x=lon,
+    y=lat,
+    colorscale='Viridis',
+    colorbar=dict(title="Temperature (°C)")
+))
+
+fig.update_layout(
+    title="Global Ocean Surface Temperature",
+    xaxis_title="Longitude",
+    yaxis_title="Latitude"
+)
+fig.show()
+              `
+            }
+          }
+        ]
+      },
+      {
+        id: 12,
+        title: "R for Marine Statistics",
+        subtopics: [
+          {
+            id: 16,
+            title: "Ocean Time Series Analysis",
+            content: {
+              simple: "Use R to analyze long-term ocean trends and patterns. Learn statistical methods specific to oceanographic time series, including seasonality and climate indices.",
+              technical: "Implement time series analysis using R packages like forecast, bcp, and oce. Handle missing data, detrending, spectral analysis, and correlation with climate indices (ENSO, NAO).",
+              examples: `
+# Example: ARGO temperature trend analysis in R
+library(oce)
+library(forecast)
+
+# Load and process ARGO data
+data(argo)
+temp_ts <- ts(argo[['temperature']], frequency=12)
+
+# Decompose time series
+decomp <- decompose(temp_ts)
+plot(decomp)
+
+# Trend analysis
+trend_model <- lm(temp_ts ~ time(temp_ts))
+summary(trend_model)
+cat("Temperature trend:", coef(trend_model)[2], "°C/year")
+              `
+            }
+          }
+        ]
+      },
+      {
+        id: 13,
+        title: "Machine Learning for Oceanography",
+        subtopics: [
+          {
+            id: 17,
+            title: "Predictive Modeling",
+            content: {
+              simple: "Apply machine learning to predict ocean conditions. Learn to build models that forecast sea surface temperature, detect marine heatwaves, and classify water masses.",
+              technical: "Implement ML algorithms using scikit-learn and TensorFlow for oceanographic prediction. Handle spatial-temporal data, feature engineering, and model validation for marine forecasting applications.",
+              examples: `
+# Example: Marine heatwave detection using ML
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import StandardScaler
+
+# Prepare features for heatwave detection
+features = ['sst', 'sst_anomaly', 'wind_speed', 'solar_radiation']
+X = ocean_data[features]
+y = ocean_data['heatwave_flag']
+
+# Train model
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_scaled, y)
+
+# Feature importance
+importance = pd.DataFrame({
+    'feature': features,
+    'importance': model.feature_importances_
+}).sort_values('importance', ascending=False)
+print(importance)
+              `
+            }
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -329,5 +490,62 @@ export const assignments = {
       "Analysis of potential impacts from circulation changes (3 marks)",
       "Use of scientific evidence and examples (2 marks)"
     ]
-  }
+  },
+  6: [ // Ocean Data Programming
+    {
+      id: 1,
+      question: "Which Python library is specifically designed for accessing ARGO float data?",
+      options: ["pandas", "argopy", "xarray", "numpy"],
+      correct: 1,
+      explanation: "The argopy library is specifically designed to provide easy access to ARGO float data through various data providers and protocols.",
+      difficulty: "beginner"
+    },
+    {
+      id: 2,
+      question: "What data format is commonly used for satellite oceanographic datasets?",
+      options: ["CSV", "JSON", "NetCDF", "XML"],
+      correct: 2,
+      explanation: "NetCDF (Network Common Data Form) is the standard format for scientific datasets, especially in oceanography and meteorology.",
+      difficulty: "beginner"
+    },
+    {
+      id: 3,
+      question: "Which API endpoint would you use to access NASA's sea surface temperature data?",
+      options: [
+        "https://api.nasa.gov/sst",
+        "https://podaac-opendap.jpl.nasa.gov/opendap/",
+        "https://oceandata.nasa.gov/api/",
+        "https://earthdata.nasa.gov/sst-api/"
+      ],
+      correct: 1,
+      explanation: "NASA's Physical Oceanography Distributed Active Archive Center (PO.DAAC) provides OPeNDAP access to satellite oceanographic data.",
+      difficulty: "intermediate"
+    },
+    {
+      id: 4,
+      question: "When working with ocean time series data, what should you consider first?",
+      options: [
+        "Data visualization",
+        "Statistical modeling",
+        "Quality control and missing data handling",
+        "Machine learning algorithms"
+      ],
+      correct: 2,
+      explanation: "Quality control and handling missing data is crucial in oceanographic datasets due to instrument failures, harsh conditions, and data transmission issues.",
+      difficulty: "intermediate"
+    },
+    {
+      id: 5,
+      question: "Which Python code correctly calculates the mean sea surface temperature from ARGO data?",
+      options: [
+        "ds['TEMP'].mean()",
+        "np.mean(ds.temperature)",
+        "ds.sel(PRES=slice(0, 10))['TEMP'].mean()",
+        "ds['SST'].average()"
+      ],
+      correct: 2,
+      explanation: "To get surface temperature, you need to select shallow pressure levels (0-10 dbar) and then calculate the mean of the temperature variable.",
+      difficulty: "advanced"
+    }
+  ]
 };

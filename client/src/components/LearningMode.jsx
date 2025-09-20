@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { learningCategories } from '../data/learningData';
+import { learningCategories, quizQuestions } from '../data/learningData';
 
 const LearningMode = () => {
   const [selectedCategory, setSelectedCategory] = useState('Marine Life');
@@ -23,9 +23,10 @@ const LearningMode = () => {
   };
 
   const calculateQuizScore = () => {
-    const questions = currentSubtopic?.quiz || [];
+    const categoryId = currentCategoryData?.id;
+    const questions = quizQuestions[categoryId] || [];
     const correctAnswers = questions.filter((q, index) => 
-      quizAnswers[index] === q.correctAnswer
+      quizAnswers[index] === q.correct
     ).length;
     return Math.round((correctAnswers / questions.length) * 100);
   };
@@ -38,7 +39,9 @@ const LearningMode = () => {
   };
 
   const nextQuestion = () => {
-    if (currentQuizIndex < (currentSubtopic?.quiz?.length - 1)) {
+    const categoryId = currentCategoryData?.id;
+    const questions = quizQuestions[categoryId] || [];
+    if (currentQuizIndex < (questions.length - 1)) {
       setCurrentQuizIndex(currentQuizIndex + 1);
     } else {
       setShowResults(true);
@@ -179,7 +182,7 @@ const LearningMode = () => {
                     </div>
 
                     {/* Quiz Button */}
-                    {currentSubtopic.quiz && currentSubtopic.quiz.length > 0 && (
+                    {quizQuestions[currentCategoryData?.id] && quizQuestions[currentCategoryData?.id].length > 0 && (
                       <div className="mt-8 pt-6 border-t border-gray-200">
                         <div className="flex justify-between items-center">
                           <div>
@@ -187,7 +190,7 @@ const LearningMode = () => {
                               Test Your Knowledge
                             </h5>
                             <p className="text-sm text-gray-600">
-                              {currentSubtopic.quiz.length} questions available
+                              {quizQuestions[currentCategoryData?.id]?.length} questions available
                             </p>
                           </div>
                           <button
@@ -214,15 +217,15 @@ const LearningMode = () => {
                       </div>
                     </div>
 
-                    {currentSubtopic?.quiz && (
+                    {quizQuestions[currentCategoryData?.id] && (
                       <div className="space-y-6">
                         <div className="bg-blue-50 p-4 rounded-lg">
                           <h5 className="font-semibold text-lg text-gray-900 mb-4">
-                            {currentSubtopic.quiz[currentQuizIndex]?.question}
+                            {quizQuestions[currentCategoryData?.id]?.[currentQuizIndex]?.question}
                           </h5>
                           
                           <div className="space-y-3">
-                            {currentSubtopic.quiz[currentQuizIndex]?.options.map((option, index) => (
+                            {quizQuestions[currentCategoryData?.id]?.[currentQuizIndex]?.options.map((option, index) => (
                               <button
                                 key={index}
                                 onClick={() => handleQuizAnswer(currentQuizIndex, index)}
@@ -250,7 +253,7 @@ const LearningMode = () => {
                             disabled={quizAnswers[currentQuizIndex] === undefined}
                             className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-400 transition-all"
                           >
-                            {currentQuizIndex === (currentSubtopic?.quiz?.length - 1) ? 'Finish Quiz' : 'Next Question'} →
+                            {currentQuizIndex === (quizQuestions[currentCategoryData?.id]?.length - 1) ? 'Finish Quiz' : 'Next Question'} →
                           </button>
                         </div>
                       </div>
@@ -267,31 +270,31 @@ const LearningMode = () => {
                       </div>
                       <p className="text-xl text-gray-700">
                         You got {Object.values(quizAnswers).filter((answer, index) => 
-                          answer === currentSubtopic?.quiz[index]?.correctAnswer
-                        ).length} out of {currentSubtopic?.quiz?.length} questions correct!
+                          answer === quizQuestions[currentCategoryData?.id]?.[index]?.correct
+                        ).length} out of {quizQuestions[currentCategoryData?.id]?.length} questions correct!
                       </p>
                     </div>
 
                     {/* Detailed Results */}
                     <div className="space-y-4 text-left">
                       <h5 className="text-xl font-semibold text-gray-900">Review Your Answers</h5>
-                      {currentSubtopic?.quiz?.map((question, index) => (
+                      {quizQuestions[currentCategoryData?.id]?.map((question, index) => (
                         <div key={index} className="bg-gray-50 p-4 rounded-lg">
                           <p className="font-medium text-gray-900 mb-2">
                             {index + 1}. {question.question}
                           </p>
                           <p className={`text-sm ${
-                            quizAnswers[index] === question.correctAnswer
+                            quizAnswers[index] === question.correct
                               ? 'text-green-600'
                               : 'text-red-600'
                           }`}>
                             Your answer: {question.options[quizAnswers[index]]} {
-                              quizAnswers[index] === question.correctAnswer ? '✅' : '❌'
+                              quizAnswers[index] === question.correct ? '✅' : '❌'
                             }
                           </p>
-                          {quizAnswers[index] !== question.correctAnswer && (
+                          {quizAnswers[index] !== question.correct && (
                             <p className="text-sm text-green-600">
-                              Correct answer: {question.options[question.correctAnswer]}
+                              Correct answer: {question.options[question.correct]}
                             </p>
                           )}
                           <p className="text-xs text-gray-600 mt-2">

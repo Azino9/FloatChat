@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloatChat - About Us Demo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .demo-title {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00d4ff, #0891b2, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #00d4ff;
+        }
+        
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+        
+        .access-info {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .access-title {
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .access-url {
+            color: #00d4ff;
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="demo-title">FloatChat About Us Page 🌊</h1>
+        <p class="demo-subtitle">Professional team showcase with modern ocean-themed design</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <div class="feature-title">Modern Design</div>
+                <div class="feature-desc">Glass morphism effects with ocean-inspired gradients and smooth animations</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <div class="feature-title">Interactive Team Cards</div>
+                <div class="feature-desc">Flip cards with hover effects showcasing each team member's expertise</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <div class="feature-title">3D Mission Visual</div>
+                <div class="feature-desc">Animated globe with orbiting satellites representing our global impact</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">Fully Responsive</div>
+                <div class="feature-desc">Optimized for desktop, tablet, and mobile devices with smooth transitions</div>
+            </div>
+        </div>
+        
+        <div class="access-info">
+            <div class="access-title">🚀 Access the About Us Page:</div>
+            <div class="access-url">http://localhost:5173/about</div>
+        </div>
+        
+        <p style="color: #94a3b8; font-size: 0.9rem; margin-top: 2rem;">
+            Start your development server with <code style="background: rgba(0,0,0,0.3); padding: 0.2rem 0.5rem; border-radius: 4px;">npm run dev</code> 
+            and navigate to the URL above to see the full About Us page in action!
+        </p>
+    </div>
+</body>
+</html>

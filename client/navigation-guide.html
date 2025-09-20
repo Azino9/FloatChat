@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloatChat - Complete Navigation Guide</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .guide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .guide-title {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00d4ff, #0891b2, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .guide-subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .nav-section {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(20px);
+        }
+        
+        .nav-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .nav-item {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            border-color: #10b981;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+        
+        .nav-item-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-icon {
+            font-size: 1.5rem;
+        }
+        
+        .nav-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+        
+        .nav-description {
+            color: #94a3b8;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-url {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: #00d4ff;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(0, 212, 255, 0.1));
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        
+        .access-info {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .command {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #00d4ff;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <h1 class="guide-title">🌊 FloatChat Navigation Guide</h1>
+        <p class="guide-subtitle">Complete access to all platform features and pages</p>
+        
+        <!-- Main Navigation -->
+        <div class="nav-section">
+            <h2 class="nav-section-title">
+                <span>🧭</span>
+                Main Navigation Bar
+            </h2>
+            <div class="nav-grid">
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-name">Home</span>
+                    </div>
+                    <div class="nav-description">
+                        Main landing page with hero section, interactive globe, and platform overview
+                    </div>
+                    <div class="nav-url">Click "Home" button in navigation</div>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-name">Smart Discovery</span>
+                    </div>
+                    <div class="nav-description">
+                        Advanced ocean float data discovery with filters and real-time search
+                    </div>
+                    <div class="nav-url">Click "Smart Discovery" button</div>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-name">Analytics</span>
+                    </div>
+                    <div class="nav-description">
+                        Enhanced ocean data visualization with temperature/salinity charts and live mode
+                    </div>
+                    <div class="nav-url">Click "Analytics" button</div>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">🚀</span>
+                        <span class="nav-name">Future Vision</span>
+                    </div>
+                    <div class="nav-description">
+                        Explore upcoming platform features and development roadmap
+                    </div>
+                    <div class="nav-url">Click "Future Vision" button</div>
+                </div>
+                
+                <div class="nav-item highlight">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-name">About Us</span>
+                    </div>
+                    <div class="nav-description">
+                        Meet our expert team with interactive cards, mission, and core values
+                    </div>
+                    <div class="nav-url">http://localhost:5173/about</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Access Navigation -->
+        <div class="nav-section">
+            <h2 class="nav-section-title">
+                <span>⚡</span>
+                Quick Access Features
+            </h2>
+            <div class="nav-grid">
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">📰</span>
+                        <span class="nav-name">Latest News</span>
+                    </div>
+                    <div class="nav-description">
+                        Recent oceanographic discoveries, research publications, and marine science updates
+                    </div>
+                    <div class="nav-url">Click "Latest News" in Quick Access</div>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-name">Policy Hub</span>
+                    </div>
+                    <div class="nav-description">
+                        Maritime regulations, environmental policies, and conservation updates
+                    </div>
+                    <div class="nav-url">Click "Policy Hub" in Quick Access</div>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">🔬</span>
+                        <span class="nav-name">Research Hub</span>
+                    </div>
+                    <div class="nav-description">
+                        Ongoing projects, publications, and collaboration opportunities
+                    </div>
+                    <div class="nav-url">Click "Research Hub" in Quick Access</div>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">💻</span>
+                        <span class="nav-name">Learn Coding</span>
+                    </div>
+                    <div class="nav-description">
+                        Ocean data programming tutorials with Python, R, and machine learning
+                    </div>
+                    <div class="nav-url">Click "Learn Coding" in Quick Access</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Features -->
+        <div class="nav-section">
+            <h2 class="nav-section-title">
+                <span>🎯</span>
+                Additional Features
+            </h2>
+            <div class="nav-grid">
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">💬</span>
+                        <span class="nav-name">AI Chat</span>
+                    </div>
+                    <div class="nav-description">
+                        Interactive AI assistant for ocean data queries and assistance
+                    </div>
+                    <div class="nav-url">Floating chat button (bottom-right)</div>
+                </div>
+                
+                <div class="nav-item">
+                    <div class="nav-item-header">
+                        <span class="nav-icon">🌍</span>
+                        <span class="nav-name">Interactive Globe</span>
+                    </div>
+                    <div class="nav-description">
+                        3D globe with ocean data visualization and float locations
+                    </div>
+                    <div class="nav-url">Available on Home page</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="access-info">
+            <h3 style="color: #10b981; margin-bottom: 1rem;">🚀 How to Access Everything</h3>
+            <p style="margin-bottom: 1rem;">Start your development server:</p>
+            <div class="command">npm run dev</div>
+            <p style="margin-bottom: 0;">Then navigate to: <strong>http://localhost:5173</strong></p>
+        </div>
+    </div>
+</body>
+</html>

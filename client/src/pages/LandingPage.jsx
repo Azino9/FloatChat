@@ -1,10 +1,15 @@
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import ChatInterface from '../components/ChatInterface';
 import Globe3D from '../components/Globe3D';
 import DataVisualization from '../components/DataVisualization';
 import FutureScope from '../components/FutureScope';
 import SmartDiscovery from '../components/SmartDiscovery';
+import LearningMode from '../components/LearningMode';
+import LatestNews from '../components/LatestNews';
+import PolicyHub from '../components/PolicyHub';
+import ResearchHub from '../components/ResearchHub';
 import Livebooks from './Livebooks';
 
 const LandingPage = () => {
@@ -111,6 +116,14 @@ const LandingPage = () => {
         return <FutureScope onNavigateToLivebooks={() => setCurrentView('livebooks')} />;
       case 'livebooks':
         return <Livebooks />;
+      case 'news':
+        return <LatestNews />;
+      case 'policy':
+        return <PolicyHub />;
+      case 'research':
+        return <ResearchHub />;
+      case 'learning':
+        return <LearningMode />;
       default:
         return renderHomeContent();
     }
@@ -267,8 +280,56 @@ const LandingPage = () => {
           >
             Future Vision
           </button>
+          <Link to="/about" className="nav-link about-link">
+            <span className="nav-icon">👥</span>
+            About Us
+          </Link>
         </div>
       </nav>
+
+      {/* Secondary Navigation for New Features */}
+      <div className="secondary-nav">
+        <div className="secondary-nav-container">
+          <div className="quick-access-title">
+            <span className="title-icon">⚡</span>
+            Quick Access
+          </div>
+          <div className="quick-links">
+            <button 
+              className="quick-link"
+              onClick={() => setCurrentView('news')}
+              title="Latest oceanographic news and discoveries"
+            >
+              <span className="quick-icon">📰</span>
+              <span className="quick-text">Latest News</span>
+            </button>
+            <button 
+              className="quick-link"
+              onClick={() => setCurrentView('policy')}
+              title="Maritime policies and regulations"
+            >
+              <span className="quick-icon">📋</span>
+              <span className="quick-text">Policy Hub</span>
+            </button>
+            <button 
+              className="quick-link"
+              onClick={() => setCurrentView('research')}
+              title="Research projects and publications"
+            >
+              <span className="quick-icon">🔬</span>
+              <span className="quick-text">Research Hub</span>
+            </button>
+            <button 
+              className="quick-link"
+              onClick={() => setCurrentView('learning')}
+              title="Ocean data programming tutorials"
+            >
+              <span className="quick-icon">💻</span>
+              <span className="quick-text">Learn Coding</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* Animated Background */}
       <div className="bg-animation">
