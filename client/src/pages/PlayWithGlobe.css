@@ -1,0 +1,332 @@
+/* Play with Globe Page Styles */
+.play-with-globe-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0b1e 0%, #1a1b3a 50%, #2a2b5a 100%);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.globe-page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.globe-page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.globe-page-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Main Content Layout */
+.globe-content-container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Controls Panel */
+.globe-controls-panel {
+  background: rgba(0, 20, 40, 0.6);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(10px);
+  height: fit-content;
+}
+
+.control-section {
+  margin-bottom: 2rem;
+}
+
+.control-section h3 {
+  color: #00d4ff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Globe Style Selector */
+.globe-style-selector {
+  margin-bottom: 1rem;
+}
+
+.style-dropdown {
+  width: 100%;
+  padding: 0.8rem;
+  background: rgba(0, 212, 255, 0.1);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.style-dropdown:focus {
+  outline: none;
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.style-dropdown option {
+  background: #1a1b3a;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+/* Control Instructions */
+.control-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.instruction-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+.control-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+/* Statistics Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 212, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00d4ff;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+/* Info Text */
+.info-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.info-text p {
+  margin-bottom: 1rem;
+}
+
+/* Globe Display Area */
+.globe-display-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.globe-container-wrapper {
+  background: rgba(0, 20, 40, 0.6);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+}
+
+/* Globe Info Panel */
+.globe-info-panel {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: rgba(0, 20, 40, 0.6);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.current-style-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.style-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.style-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.style-badge.hologram {
+  background: linear-gradient(45deg, rgba(0, 212, 255, 0.2), rgba(14, 165, 233, 0.2));
+  border: 1px solid #00d4ff;
+  color: #00d4ff;
+}
+
+.style-badge.solid {
+  background: linear-gradient(45deg, rgba(100, 116, 139, 0.2), rgba(51, 65, 85, 0.2));
+  border: 1px solid #64748b;
+  color: #64748b;
+}
+
+.rotation-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.active {
+  background: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Navigation */
+.globe-page-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.nav-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 15px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home-button {
+  background: rgba(100, 116, 139, 0.2);
+  color: #64748b;
+  border: 2px solid #64748b;
+}
+
+.home-button:hover {
+  background: rgba(100, 116, 139, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(100, 116, 139, 0.3);
+}
+
+.explore-button {
+  background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.explore-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .globe-content-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .globe-controls-panel {
+    order: 2;
+  }
+  
+  .globe-display-area {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .play-with-globe-page {
+    padding: 1rem;
+  }
+  
+  .globe-page-title {
+    font-size: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .globe-page-navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-button {
+    width: 200px;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Futuristic Blue-Black Color Palette */
+  --primary-bg: #0a0a0f;
+  --secondary-bg: #0f1419;
+  --accent-bg: #1a1f2e;
+  --card-bg: rgba(15, 20, 25, 0.8);
+  --border-color: #1e3a5f;
+  --border-glow: #00d4ff;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b3c5d9;
+  --text-accent: #00d4ff;
+  --text-muted: #6b7280;
+  
+  /* Ocean Blues */
+  --ocean-blue: #0891b2;
+  --ocean-light: #0ea5e9;
+  --ocean-dark: #164e63;
+  --ocean-glow: rgba(8, 145, 178, 0.3);
+  
+  /* Gradients */
+  --bg-gradient: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 50%, var(--accent-bg) 100%);
+  --card-gradient: linear-gradient(145deg, rgba(15, 20, 25, 0.9) 0%, rgba(26, 31, 46, 0.7) 100%);
+  --ocean-gradient: linear-gradient(135deg, var(--ocean-dark) 0%, var(--ocean-blue) 50%, var(--ocean-light) 100%);
+  
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  color-scheme: dark;
+  color: var(--text-primary);
+  background: var(--bg-gradient);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', monospace;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: var(--ocean-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px var(--ocean-glow);
+}
+
+a {
+  font-weight: 500;
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--ocean-light);
+  text-shadow: 0 0 10px var(--ocean-glow);
+}
+
+/* Buttons */
+button {
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background: var(--card-gradient);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ocean-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ocean-light);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes slideInFromLeft {
+  0% { 
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% { 
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility Classes */
+.glow {
+  box-shadow: 0 0 20px var(--ocean-glow);
+}
+
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+.ocean-text {
+  background: var(--ocean-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}

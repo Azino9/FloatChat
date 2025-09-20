@@ -1,0 +1,438 @@
+/* FutureScope.css */
+.future-scope {
+  min-height: 100vh;
+  padding: 6rem 2rem 2rem 2rem; /* Top padding to clear fixed nav */
+  background: var(--bg-gradient);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header Section */
+.scope-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header-content {
+  margin-bottom: 3rem;
+}
+
+.scope-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: var(--ocean-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px var(--ocean-glow);
+}
+
+.scope-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Impact Metrics */
+.impact-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.metric-card {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+}
+
+.metric-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(0 0 15px var(--ocean-glow));
+}
+
+.metric-value {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  font-family: 'Orbitron', monospace;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-card {
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
+}
+
+.feature-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 15px var(--ocean-glow));
+}
+
+.feature-info {
+  flex: 1;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  font-family: 'Orbitron', monospace;
+}
+
+.feature-timeline {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.timeline-badge,
+.impact-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.timeline-badge {
+  background: var(--ocean-gradient);
+  color: white;
+}
+
+.impact-badge {
+  background: var(--card-gradient);
+  color: var(--text-accent);
+  border: 1px solid var(--border-color);
+}
+
+.feature-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Feature List */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  border-color: var(--border-glow);
+  background: var(--accent-bg);
+}
+
+.item-icon {
+  color: var(--text-accent);
+  font-size: 0.9rem;
+}
+
+.item-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Progress Bar */
+.feature-progress {
+  position: relative;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--secondary-bg);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--ocean-gradient);
+  border-radius: 2px;
+  transition: width 1s ease-out;
+  animation: progress-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes progress-glow {
+  0% { box-shadow: 0 0 5px var(--ocean-glow); }
+  100% { box-shadow: 0 0 15px var(--ocean-glow); }
+}
+
+.progress-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Vision Section */
+.vision-section {
+  margin-bottom: 4rem;
+}
+
+.vision-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+}
+
+.vision-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.vision-item {
+  text-align: left;
+  padding: 1.5rem;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.vision-item:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-3px);
+}
+
+.vision-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.vision-item p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Call to Action */
+.cta-section {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn.primary {
+  background: var(--ocean-gradient);
+  border-color: var(--border-glow);
+  color: white;
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  border-color: var(--ocean-blue);
+  color: var(--text-primary);
+}
+
+.cta-btn.tertiary {
+  background: var(--card-gradient);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 212, 255, 0.3);
+}
+
+.cta-btn.primary:hover {
+  box-shadow: 0 15px 35px rgba(0, 212, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .future-scope {
+    padding: 1rem;
+  }
+  
+  .scope-title {
+    font-size: 2.5rem;
+  }
+  
+  .scope-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .impact-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .feature-card {
+    padding: 2rem;
+  }
+  
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .metric-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .feature-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+/* Clickable Card Styles */
+.clickable-card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.clickable-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.clickable-card:hover::before {
+  left: 100%;
+}
+
+.clickable-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--ocean-blue);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+}
